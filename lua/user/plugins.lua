@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
   -- LSP
   -- use "williamboman/nvim-lsp-installer"
   use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
   -- telescope
   use "nvim-telescope/telescope.nvim"

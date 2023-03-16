@@ -1,3 +1,4 @@
+-- mason
 local mason_ok, mason = pcall(require, 'mason')
 if not mason_ok then
   vim.notify('mason is not installed.')
@@ -15,23 +16,19 @@ mason.setup({
   }
 })
 
-local lsp_config_ok, lsp_config = pcall(require, 'mason-lspconfig')
-if not lsp_config_ok then
+-- mason-lspconfig
+local mason_lsp_config_ok, mason_lsp_config = pcall(require, 'mason-lspconfig')
+if not mason_lsp_config_ok then
   vim.notify('mason-lspconfig is not installed.')
   return
 end
 
-lsp_config.setup({
+mason_lsp_config.setup({
   ensure_installed = { "lua_ls"},
   automatic_installation = false,
 })
 
-local lsp_installer_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
-if not lsp_installer_ok then
-  vim.notify('nvim-lsp-installer is not installed.')
-  return
-end
-
+-- nvim-lspconfig
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_ok then
   vim.notify('lspconfig is not installed.')
@@ -145,19 +142,23 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-for _, server in ipairs(lsp_installer.get_installed_servers()) do
-  local sopts = {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-  }
+mason_lsp_config.setup_handlers {
 
-  local server_opts_ok, server_opts = pcall(require, 'user.lsp.' .. server.name)
-  if server_opts_ok then
-    sopts = vim.tbl_deep_extend("force", server_opts, sopts)
-  else
-    vim.notify("language server custom settings not found => " .. server.name)
-  end
+  function (server_name)
+    local sopts = {
+      on_attach = on_attach,
+      flags = lsp_flags,
+      capabilities = capabilities,
+    }
 
-  lspconfig[server.name].setup(sopts)
-end
+    local server_opts_ok, server_opts = pcall(require, 'user.lsp.' .. server_name)
+    if server_opts_ok then
+      sopts = vim.tbl_deep_extend("force", server_opts, sopts)
+    else
+      vim.notify("language server custom settings not found => " .. server_name)
+    end
+
+    lspconfig[server_name].setup(sopts)
+  end,
+
+}

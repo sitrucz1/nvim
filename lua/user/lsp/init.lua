@@ -24,7 +24,7 @@ if not mason_lsp_config_ok then
 end
 
 mason_lsp_config.setup({
-  ensure_installed = { "lua_ls"},
+  ensure_installed = { "lua_ls", "vimls", "pyright" },
   automatic_installation = false,
 })
 

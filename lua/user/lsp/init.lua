@@ -15,6 +15,17 @@ mason.setup({
   }
 })
 
+local lsp_config_ok, lsp_config = pcall(require, 'mason-lspconfig')
+if not lsp_config_ok then
+  vim.notify('mason-lspconfig is not installed.')
+  return
+end
+
+lsp_config.setup({
+  ensure_installed = { "lua_ls"},
+  automatic_installation = false,
+})
+
 local lsp_installer_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
 if not lsp_installer_ok then
   vim.notify('nvim-lsp-installer is not installed.')
@@ -26,19 +37,6 @@ if not lspconfig_ok then
   vim.notify('lspconfig is not installed.')
   return
 end
-
-lsp_installer.setup({
-  automatic_installation = true,
-  ensure_installed = { 'sumneko_lua', 'pyright', 'vimls' },
-  ui = {
-    border = 'rounded',
-    icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗"
-    },
-  },
-})
 
 local signs = {
   { name = "DiagnosticSignError", text = "" },

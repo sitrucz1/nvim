@@ -56,7 +56,6 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
   -- LSP
-  -- use "williamboman/nvim-lsp-installer"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
@@ -69,6 +68,8 @@ return require('packer').startup(function(use)
   use "p00f/nvim-ts-rainbow"
   -- autopairs
   use "windwp/nvim-autopairs"
+  -- gitsigns
+  use "lewis6991/gitsigns.nvim"
   -- bootstrap
   if packer_bootstrap then
     require('packer').sync()

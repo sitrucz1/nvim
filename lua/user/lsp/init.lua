@@ -19,7 +19,11 @@ require "mason".setup({
 
 -- mason-lspconfig
 require "mason-lspconfig".setup({
-  ensure_installed = { "lua_ls", "vimls", "pyright" },
+  ensure_installed = {
+    "lua_ls",
+    "vimls",
+    "pyright"
+  },
   automatic_installation = false,
 })
 

@@ -28,8 +28,8 @@ keymap('', '<leader>v', ':!cscript %<CR>')
 keymap('', '<leader>,', ':%s/\\n/,/g<CR>$x0:noh<CR>')
 keymap('', "<leader>'", ":%s/\\n/','/g<CR>I'<esc>$xx0:noh<CR>")
 --Buffer prev/next
-keymap('', '<C-j>', ':bnext<cr>')
-keymap('', '<C-k>', ':bprev<cr>')
+keymap('', '<tab>', ':bnext<cr>')
+keymap('', '<S-tab>', ':bprev<cr>')
 keymap('', '<leader>d', ':bdelete<cr>')
 keymap('', '||', ':qa<cr>')
 -- Move lines up and down

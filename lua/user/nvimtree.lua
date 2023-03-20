@@ -14,8 +14,10 @@ local on_attach = function(bufnr)
   local function opts(desc)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
+
   -- default keymap
   api.config.mappings.default_on_attach(bufnr)
+
   -- my custom mappings
   vim.keymap.set('n', 'A', api.tree.expand_all, opts('Expand All'))
   vim.keymap.set('n', 'D', '', { buffer = bufnr })

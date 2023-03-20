@@ -28,9 +28,9 @@ keymap('', '<leader>v', ':!cscript %<CR>')
 keymap('', '<leader>,', ':%s/\\n/,/g<CR>$x0:noh<CR>')
 keymap('', "<leader>'", ":%s/\\n/','/g<CR>I'<esc>$xx0:noh<CR>")
 --Buffer prev/next
-keymap('', '<tab>', ':bnext<cr>')
-keymap('', '<S-tab>', ':bprev<cr>')
-keymap('', '<leader>d', ':bdelete<cr>')
+-- keymap('', '<tab>', ':bnext<cr>')
+-- keymap('', '<S-tab>', ':bprev<cr>')
+keymap('', '<leader>bd', ':bdelete<cr>')
 keymap('', '||', ':qa<cr>')
 -- Move lines up and down
 if vim.fn.has('mac') > 0 then

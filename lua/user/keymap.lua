@@ -57,3 +57,6 @@ keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>
 keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').planets{}<cr>")
 -- nvim-tree
 keymap("n", "<leader>p", ":NvimTreeToggle<cr>")
+-- fugitive
+keymap("n", "<leader>gs", ":G<cr>")
+

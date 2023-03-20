@@ -22,6 +22,8 @@ local on_attach = function(bufnr)
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
   vim.keymap.set('n', 'D', '', { buffer = bufnr })
   vim.keymap.del('n', 'D', { buffer = bufnr })
+  vim.keymap.set('n', 'E', '', { buffer = bufnr })
+  vim.keymap.del('n', 'E', { buffer = bufnr })
 end
 
 require "nvim-tree".setup({

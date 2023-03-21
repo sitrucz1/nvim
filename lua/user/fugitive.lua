@@ -9,6 +9,8 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Add a mapping for fugitive.",
   callback = function()
       vim.api.nvim_buf_set_keymap(0, "n", "<tab>", "=", { silent = true })
+      vim.api.nvim_buf_set_keymap(0, "n", "<leader>gp", ":Git pull<cr>", { silent = true })
+      vim.api.nvim_buf_set_keymap(0, "n", "<leader>gP", ":Git push<cr>", { silent = true })
   end
 })
 

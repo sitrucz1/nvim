@@ -14,6 +14,12 @@ require "nvim-tree".setup({
       quit_on_open = true,
     },
   },
+  filters = {
+    dotfiles = false,
+    custom = {
+      "^\\.git",
+    },
+  },
   on_attach = function(bufnr)
     local api = require('nvim-tree.api')
 

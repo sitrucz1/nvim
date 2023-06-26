@@ -23,8 +23,6 @@ keymap('', '<leader>gw', ':Gwrite<cr>')
 keymap('', '<leader>l', ':set list!<CR>')
 keymap('', '<leader>dws', ':%s/\\s\\+$<cr>')
 keymap('', '<leader>"', 'viw<esc>a"<esc>hbi"<esc>lel')
-keymap('', '<leader>g', ':!python %<CR>')
-keymap('', '<leader>v', ':!cscript %<CR>')
 keymap('', '<leader>,', ':%s/\\n/,/g<CR>$x0:noh<CR>')
 keymap('', "<leader>'", ":%s/\\n/','/g<CR>I'<esc>$xx0:noh<CR>")
 --Buffer prev/next

@@ -32,9 +32,9 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-tree/nvim-tree.lua'
-  use {'akinsho/bufferline.nvim', tag = "v3.*", 
-    requires = 'nvim-tree/nvim-web-devicons'
-  }
+  -- use {'akinsho/bufferline.nvim', tag = "v3.*", 
+  --   requires = 'nvim-tree/nvim-web-devicons'
+  -- }
   -- colorschemes
   use 'Mofiqul/dracula.nvim'
   -- utilities

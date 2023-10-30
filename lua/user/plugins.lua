@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
+  use {'akinsho/git-conflict.nvim', tag = "v1.2.2"}
+  -- use 'rhysd/conflict-marker.vim'
   -- comments
   use 'numToStr/Comment.nvim'
   -- lualine

@@ -48,13 +48,13 @@ keymap('v', '<', '<gv')
 keymap('v', '=', '=gv')
 -- telescope
 -- keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false })<cr>")
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+keymap("n", "<leader>p", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').planets{}<cr>")
 -- nvim-tree
-keymap("n", "<leader>p", ":NvimTreeToggle<cr>")
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>")
 -- fugitive
 keymap("n", "<leader>gs", ":G<cr>")
 

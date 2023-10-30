@@ -22,7 +22,8 @@ require "mason-lspconfig".setup({
   ensure_installed = {
     "lua_ls",
     "vimls",
-    "pyright"
+    "pyright",
+    "yamlls"
   },
   automatic_installation = false,
 })

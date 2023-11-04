@@ -37,12 +37,13 @@ return require('packer').startup(function(use)
   -- }
   -- colorschemes
   use 'Mofiqul/dracula.nvim'
+  use 'shaunsingh/nord.nvim'
   -- utilities
   use 'norcalli/nvim-colorizer.lua'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
-  use {'akinsho/git-conflict.nvim', tag = "v1.2.2"}
+  -- use {'akinsho/git-conflict.nvim', tag = "v1.2.2"}
   -- use 'rhysd/conflict-marker.vim'
   -- comments
   use 'numToStr/Comment.nvim'
